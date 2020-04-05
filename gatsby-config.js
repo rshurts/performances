@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Spoken Word Project',
+    title: 'Open Window Theatre Streaming Performance',
     description:
       'Open Window Theatre was founded in May 2011 for the purpose of bringing multigenerational professional theater with a redemptive vision to the Twin Cities.',
   },

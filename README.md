@@ -1,6 +1,6 @@
 # Gatsby + Netlify CMS
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/bb890475-9bca-479a-977f-561a9b8b7880/deploy-status)](https://app.netlify.com/sites/owt-spoken-word/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5d510b05-5e1d-4113-acd2-5053a560903c/deploy-status)](https://app.netlify.com/sites/hungry-dijkstra-e99467/deploys)
 
 Built with [Gatsby](https://www.gatsbyjs.org/), and [Netlify CMS](https://www.netlifycms.org), following the [JAMstack architecture](https://jamstack.org) by using Git as a single source of truth and [Netlify](https://www.netlify.com) for continuous deployment and CDN distribution.
 

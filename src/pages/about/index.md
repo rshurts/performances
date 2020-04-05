@@ -1,7 +1,7 @@
 ---
 templateKey: about-page
 path: /about
-title: Beauty cannot be quarantined.
+title: Streaming performances
 ---
 ### Mercy Unrelenting
 
