@@ -1,20 +1,16 @@
 ---
 templateKey: index-page
-title: Open Window Theatre Spoken Word Project
+title: Open Window Theatre Streaming Performances
 description: >-
-  The Spoken Word Project is our effort from Open Window Theatre to bring some
+  Open Window Theatre's Streaming Performances hope to bring some
   beauty and goodness to the virtual sphere during the COVID-19 pandemic.
-heading: Spoken Word Project
-subheading: Beauty cannot be quarantined!
+vimeoId: '401063602'
+heading: Stage to Screen
+subheading: Streaming performances from Open Window Theatre
 mainpitch:
-  title: Spoken Word Project
+  title: About the Show
   description: >
-    The Spoken Word Project is our effort from Open Window Theatre to bring
-    beauty and hope to the virtual sphere during the COVID-19 pandemic. We’ll be
-    sharing weekly poetry recitations performed and recorded by OWT actors and
-    staff. Please spread the beauty by sharing the videos, let us know if there
-    are poems you would like to see included, and please consider a donation to
-    support Open Window Theatre during this critical time. Thank you!
+    TODO
 ---
 # Support During COVID-19
 

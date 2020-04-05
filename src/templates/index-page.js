@@ -1,10 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 
 import Layout from '../components/Layout'
-import BlogRoll from '../components/BlogRoll'
 import Content, { HTMLContent } from '../components/Content'
 
 export const IndexPageTemplate = ({
@@ -41,10 +40,10 @@ export const IndexPageTemplate = ({
               flexDirection: 'column',
             }}
           >
-            <h1 className="has-text-weight-bold is-size-5-mobile is-size-2-tablet is-size-1-widescreen box-background">
+            <h1 className="has-text-weight-bold has-text-centered is-size-5-mobile is-size-2-tablet is-size-1-widescreen box-background">
               {heading}
             </h1>
-            <h2 className="has-text-weight-bold is-size-6-mobile is-size-5-tablet is-size-4-widescreen box-background">
+            <h2 className="has-text-weight-bold has-text-centered is-size-6-mobile is-size-5-tablet is-size-4-widescreen box-background">
               {subheading}
             </h2>
           </div>
@@ -114,15 +113,6 @@ export const IndexPageTemplate = ({
                   <h1>{mainpitch.title}</h1>
                   <p>{mainpitch.description}</p>
                 </div>
-                <div className="column is-12">
-                  <h2>Latest spoken words</h2>
-                  <BlogRoll />
-                  <div className="column is-12 has-text-centered">
-                    <Link className="button is-link" to="/blog">
-                      Watch more
-                    </Link>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -143,16 +133,13 @@ IndexPageTemplate.propTypes = {
     id: PropTypes.string,
     title: PropTypes.string,
   }),
+  intro: PropTypes.shape({
+    blurbs: PropTypes.array,
+  }),
 }
 
 const IndexPage = ({ data }) => {
   const { frontmatter, html } = data.markdownRemark
-  const { edges } = data.allMarkdownRemark
-  const {
-    node: {
-      frontmatter: { vimeoId, title },
-    },
-  } = edges[0]
 
   return (
     <Layout>
@@ -163,7 +150,8 @@ const IndexPage = ({ data }) => {
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
         mainpitch={frontmatter.mainpitch}
-        vimeo={{ id: vimeoId, title }}
+        vimeo={{ id: frontmatter.vimeoId, title: frontmatter.title }}
+        intro={frontmatter.intro}
         content={html}
         contentComponent={HTMLContent}
       />
@@ -176,16 +164,6 @@ IndexPage.propTypes = {
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object.isRequired,
       html: PropTypes.string.isRequired,
-    }),
-    allMarkdownRemarks: PropTypes.shape({
-      edges: PropTypes.arrayOf({
-        node: PropTypes.shape({
-          frontmatter: PropTypes.shape({
-            vimeoId: PropTypes.string.isRequired,
-            vimeoTitle: PropTypes.string.isRequired,
-          }),
-        }),
-      }),
     }),
     file: PropTypes.shape({
       childImageSharp: PropTypes.shape({
@@ -204,26 +182,12 @@ export const pageQuery = graphql`
       frontmatter {
         title
         description
+        vimeoId
         heading
         subheading
         mainpitch {
           title
           description
-        }
-      }
-    }
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
-      limit: 1
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            vimeoId
-            date(formatString: "MMMM DD, YYYY")
-          }
         }
       }
     }

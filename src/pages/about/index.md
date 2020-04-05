@@ -3,9 +3,9 @@ templateKey: about-page
 path: /about
 title: Beauty cannot be quarantined.
 ---
-### Spoken Word Project
+### Mercy Unrelenting
 
-The Spoken Word Project is our effort from Open Window Theatre to bring beauty and goodness to the virtual sphere during the COVID-19 pandemic. We’ll be sharing weekly poetry recitations performed and recorded by Open Window Theatre actors and staff. Please spread the beauty by sharing the videos, let us know if there are poems you would like to see included, and please consider a donation to support Open Window Theatre (or your local arts organization) during this challenging time. Thank you!
+`TODO`
 
 ### Open Window Theatre
 

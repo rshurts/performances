@@ -12,25 +12,6 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: 'blog'
-    label: 'Blog'
-    folder: 'src/pages/blog'
-    create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-    fields:
-      - {
-          label: 'Template Key',
-          name: 'templateKey',
-          widget: 'hidden',
-          default: 'blog-post',
-        }
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Author', name: 'author', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Vimeo ID', name: 'vimeoId', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
-      - { label: 'Tags', name: 'tags', widget: 'list' }
-
   - name: 'pages'
     label: 'Pages'
     files:
@@ -46,8 +27,10 @@ collections:
             }
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Description', name: 'description', widget: 'string' }
+          - { label: 'Vimeo ID', name: 'vimeoId', widget: 'string' }
           - { label: 'Heading', name: 'heading', widget: 'string' }
           - { label: 'Subheading', name: 'subheading', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
           - {
               label: 'Mainpitch',
               name: 'mainpitch',
@@ -58,7 +41,7 @@ collections:
                   { label: 'Description', name: 'description', widget: 'text' },
                 ],
             }
-          - { label: 'Body', name: 'body', widget: 'markdown' }
+
       - file: 'src/pages/about/index.md'
         label: 'About'
         name: 'about'
