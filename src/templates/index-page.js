@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 
 import Layout from '../components/Layout'
+import Features from '../components/Features'
 import Content, { HTMLContent } from '../components/Content'
 
 export const IndexPageTemplate = ({
@@ -14,6 +15,7 @@ export const IndexPageTemplate = ({
   subheading,
   mainpitch,
   vimeo,
+  sponsorship,
   content,
   contentComponent,
 }) => {
@@ -112,6 +114,10 @@ export const IndexPageTemplate = ({
                 <div className="column is-12">
                   <h1>{mainpitch.title}</h1>
                   <p>{mainpitch.description}</p>
+                  <Features
+                    heading={sponsorship.heading}
+                    gridItems={sponsorship.sponsors}
+                  />
                 </div>
               </div>
             </div>
@@ -133,8 +139,9 @@ IndexPageTemplate.propTypes = {
     id: PropTypes.string,
     title: PropTypes.string,
   }),
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
+  sponsorship: PropTypes.shape({
+    sponsors: PropTypes.array,
+    heading: PropTypes.string,
   }),
 }
 
@@ -151,7 +158,7 @@ const IndexPage = ({ data }) => {
         subheading={frontmatter.subheading}
         mainpitch={frontmatter.mainpitch}
         vimeo={{ id: frontmatter.vimeoId, title: frontmatter.title }}
-        intro={frontmatter.intro}
+        sponsorship={frontmatter.sponsorship}
         content={html}
         contentComponent={HTMLContent}
       />
@@ -188,6 +195,19 @@ export const pageQuery = graphql`
         mainpitch {
           title
           description
+        }
+        sponsorship {
+          heading
+          sponsors {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 240, quality: 64) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            name
+          }
         }
       }
     }

@@ -8,9 +8,20 @@ vimeoId: '401063602'
 heading: Stage to Screen
 subheading: Streaming performances from Open Window Theatre
 mainpitch:
-  title: About the Show
+  title: About the show
   description: >
-    TODO
+    Mercy Unrelenting is...
+sponsorship:
+  sponsors:
+    - image: /img/og-image.jpg
+      name: Name0
+    - image: /img/og-image.jpg
+      name: Name1
+    - image: /img/og-image.jpg
+      name: Name2
+    - image: /img/og-image.jpg
+      name: Name3
+  heading: Brought to you with the help of our generous sponsors
 ---
 # Support During COVID-19
 

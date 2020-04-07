@@ -41,6 +41,25 @@ collections:
                   { label: 'Description', name: 'description', widget: 'text' },
                 ],
             }
+          - {
+              label: Sponsorship,
+              name: sponsorship,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  {
+                    label: Sponsors,
+                    name: sponsors,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: Name, name: name, widget: string },
+                      ],
+                  },
+                ],
+            }
 
       - file: 'src/pages/about/index.md'
         label: 'About'
